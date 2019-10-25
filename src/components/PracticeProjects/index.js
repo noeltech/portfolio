@@ -1,21 +1,21 @@
 import React from "react";
+
 import OverviewContainer from "../native/OverviewContainer";
-import { faWindowRestore } from "@fortawesome/free-solid-svg-icons";
-import Projects from "./ProjectData";
+import { faFileCode } from "@fortawesome/free-solid-svg-icons";
+import Projects from "../MyProjects/ProjectData";
 import Card from "../native/Card";
 
-let title = "Check some of my awesome projects:";
+let title = "Got some mini projects here for my learning:";
 
-const mainProjects = Projects.filter(item => item.category === "major");
-
+const minorProjects = Projects.filter(item => item.category === "minor");
 const index = () => {
-  let project_list = mainProjects.map(item => {
+  let project_list = minorProjects.map(item => {
     return (
       <Card
         key={item.id}
         title={item.title}
         shortDescription={item.shortDescription}
-        icon={faWindowRestore}
+        icon={faFileCode}
         id={item.id}
       ></Card>
     );

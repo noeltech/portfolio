@@ -1,13 +1,24 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 import Header from "./components/Header/index";
-import Projects from "./components/MyProjects/index";
+import Homepage from "./components/Homepage/index";
+import ProjectPage from "./components/ProjectPage/index";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
+
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Projects />
+      <Router>
+        {/* <Header /> */}
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/projects/:id" component={ProjectPage} />
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }
